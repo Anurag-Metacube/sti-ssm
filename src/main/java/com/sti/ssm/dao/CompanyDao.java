@@ -37,11 +37,11 @@ public class CompanyDao {
 	}
 	
 	public Boolean didCompanyExists(String name) {
-		return repo.findByName(name) != null? true : false;
+		return repo.findByCompanyName(name) != null? true : false;
 	}
 	
 	public CompanyDetails getCompanyByName(String name) {
-		return repo.findByName(name) ;
+		return repo.findByCompanyName(name) ;
 	}
 
 }

@@ -28,30 +28,32 @@ public class CompanyContact implements Serializable{
 	String lastName;
 	String emailId;
 	
-	@OneToMany(cascade = {CascadeType.ALL})
-	List<Address> allContactAddress;
+	@OneToOne(cascade = {CascadeType.ALL})
+	Address contactAddress;
 
 	public CompanyContact() {}
-	
-	
-	public CompanyContact(String firstName,String companyName, String lastName, String emailId, List<Address> contactAddress, List<Address> allContactAddress) {
+
+	public CompanyContact(int id, String firstName, String lastName, String emailId, Address contactAddress) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
-		this.allContactAddress = allContactAddress;
+		this.contactAddress = contactAddress;
 		
 	}
+
+	
+	
+	
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public String getFirstName() {
 		return firstName;
@@ -77,14 +79,16 @@ public class CompanyContact implements Serializable{
 		this.emailId = emailId;
 	}
 
-	public List<Address> getAllContactAddress() {
-		return allContactAddress;
+	public Address getContactAddress() {
+		return contactAddress;
 	}
 
-
-	public void setAllContactAddress(List<Address> allContactAddress) {
-		this.allContactAddress = allContactAddress;
+	public void setContactAddress(Address contactAddress) {
+		this.contactAddress = contactAddress;
 	}
+	
+	
+	
 
 	
 	

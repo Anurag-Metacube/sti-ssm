@@ -11,5 +11,5 @@ import com.sti.ssm.models.CompanyDetails;
 @Repository
 public interface CompanyRepo extends JpaRepository<CompanyDetails, Integer>{
 
-		public CompanyDetails findByName(String name);
+		public CompanyDetails findByCompanyName(String name);
 }

@@ -1,16 +1,20 @@
 package com.sti.ssm.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
 import com.sti.ssm.dao.CompanyDao;
+import com.sti.ssm.dto.CompanyDetailsDTO;
 import com.sti.ssm.models.Address;
 import com.sti.ssm.models.CompanyContact;
 import com.sti.ssm.models.CompanyDetails;
-import com.sti.ssm.pojo.CompanyContactPOJO;
-import com.sti.ssm.pojo.CompanyDetailsPOJO;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.BeanUtils;
 
 
 
@@ -26,36 +30,13 @@ public class CompanyService {
 	@Autowired
 	ContactService contactService;
 	
-	public void addCompany(CompanyDetailsPOJO companyPOJO) {
-		String companyName = companyPOJO.getName();
-		Address details = companyPOJO.getDetails();
-		details.setType("Details");
-		details.setCompanyName(companyName);
-		addressService.addAddress(details);
-		Address contact = companyPOJO.getContactAddress();
-		contact.setType("Contact");
-		contact.setCompanyName(companyName);
-		addressService.addAddress(contact);
-		Address billing = companyPOJO.getBillingAddress();
-		billing.setType("Billing");
-		billing.setCompanyName(companyName);
-		addressService.addAddress(billing);
-		CompanyContactPOJO companyContactPOJO = companyPOJO.getCompanyContact();
-		Address companyContactAddress = companyContactPOJO.getContactAddress();
-		companyContactAddress.setType("CompanyContactAddress");
-		companyContactAddress.setCompanyName(companyName);
-		addressService.addAddress(companyContactAddress);
-		CompanyContact companyContact = new CompanyContact();
-		companyContact.setFirstName(companyContactPOJO.getFirstName());
-		companyContact.setLastName(companyContactPOJO.getLastName());
-		companyContact.setEmailId(companyContactPOJO.getEmailId());
-		companyContact.setAllContactAddress(addressService.getAddress(companyName, "CompanyContactAddress"));
-		CompanyDetails company = new CompanyDetails(
-				companyName,companyPOJO.getAbbreviation(),
-				addressService.getAddress(companyName, "Details"), addressService.getAddress(companyName, "Billing"),
-				addressService.getAddress(companyName, "Contact"), companyContact
-				);
-		addressService.deleteAllByCompanyName(companyName);
+	public void addCompany(CompanyDetailsDTO companyDTO) {
+		/*CompanyDetails company = new CompanyDetails();
+		BeanUtils.copyProperties(companyDTO, company);*/
+		/*ModelMapper modelMapper = new ModelMapper();
+		CompanyDetails company = modelMapper.map(companyDTO, CompanyDetails.class);*/
+		Gson gson = new Gson();
+		CompanyDetails company = gson.fromJson(gson.toJson(companyDTO), CompanyDetails.class);
 		dao.addCompany(company);
 	}
 	

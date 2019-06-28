@@ -11,7 +11,6 @@ import com.sti.ssm.models.Address;
 @Repository
 public interface AddressRepo extends JpaRepository<Address, Integer>{
 
-	public List<Address> findAllByCompanyNameAndType(String companyName, String type);
 	
-	public void deleteAllByCompanyName(String companyName);
+	
 }

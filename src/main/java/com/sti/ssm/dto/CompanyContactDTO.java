@@ -1,19 +1,19 @@
-package com.sti.ssm.pojo;
+package com.sti.ssm.dto;
 
 import com.sti.ssm.models.Address;
 
-public class CompanyContactPOJO {
+public class CompanyContactDTO {
 
 	String firstName;
 	String lastName;
 	String emailId;
 	
-	Address contactAddress;
+	AddressDTO contactAddress;
 
-	public CompanyContactPOJO() {}
+	public CompanyContactDTO() {}
 	
-	public CompanyContactPOJO( String firstName, String lastName, String emailId,
-			Address contactAddress) {
+	public CompanyContactDTO( String firstName, String lastName, String emailId,
+			AddressDTO contactAddress) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -45,11 +45,11 @@ public class CompanyContactPOJO {
 		this.emailId = emailId;
 	}
 
-	public Address getContactAddress() {
+	public AddressDTO getContactAddress() {
 		return contactAddress;
 	}
 
-	public void setContactAddress(Address contactAddress) {
+	public void setContactAddress(AddressDTO contactAddress) {
 		this.contactAddress = contactAddress;
 	}
 	

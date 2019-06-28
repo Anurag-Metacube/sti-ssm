@@ -16,17 +16,8 @@ public class AddressDao {
 	@Autowired
 	AddressRepo repo;
 	
-	public void save(Address address) {
-		repo.save(address);
-	}
-	
-	public List<Address> getAddressByCompanyAndType(String companyName, String type) {
-		return repo.findAllByCompanyNameAndType(companyName, type);
-	}
-	
-	@Transactional
-	public void deleteAllByCompany(String  companyName) {
-		repo.deleteAllByCompanyName(companyName);
+	public Address save(Address address) {
+		return repo.save(address);
 	}
 	
 }

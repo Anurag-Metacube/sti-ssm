@@ -23,49 +23,43 @@ public class CompanyDetails {
 	@Column(name = "id", updatable = false, nullable = false)
 	int id;
 	
-	String name;
+	String companyName;
 	
+
 	String abbreviation;
 	
-	@OneToMany(cascade = {CascadeType.ALL})
-	List<Address> allDetails;
+	@OneToOne(cascade = {CascadeType.ALL})
+	Address details;
 	
-	@OneToMany(cascade = {CascadeType.ALL})
-	List<Address> allBillingAddress;
+
+	@OneToOne(cascade = {CascadeType.ALL})
+	Address billingAddress;
 	
-	@OneToMany(cascade = {CascadeType.ALL})
-	List<Address> allContactAddress;
+	@OneToOne(cascade = {CascadeType.ALL})
+	Address contactAddress;
 	
 	@OneToOne(cascade = {CascadeType.ALL})
 	CompanyContact companyContact;
 	
 	public CompanyDetails() {}
 
-	public CompanyDetails(String name, String abbreviation, List<Address> details, List<Address> billingAddress,List<Address> contactAddress,
-			CompanyContact companyContact) {
+	public CompanyDetails(String companyName, String abbreviation, Address details, Address billingAddress,
+			Address contactAddress, CompanyContact companyContact) {
 		super();
-		this.name = name;
+		this.companyName = companyName;
 		this.abbreviation = abbreviation;
-		this.allDetails = details;
-		this.allBillingAddress = billingAddress;
-		this.allContactAddress = contactAddress;
+		this.details = details;
+		this.billingAddress = billingAddress;
+		this.contactAddress = contactAddress;
 		this.companyContact = companyContact;
 	}
 
-	public int getId() {
-		return id;
+	public String getCompanyName() {
+		return companyName;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 	public String getAbbreviation() {
@@ -76,28 +70,35 @@ public class CompanyDetails {
 		this.abbreviation = abbreviation;
 	}
 
-	public List<Address> getAllDetails() {
-		return allDetails;
+	public Address getDetails() {
+		return details;
 	}
 
-	public void setAllDetails(List<Address> allDetails) {
-		this.allDetails = allDetails;
+	public void setDetails(Address details) {
+		this.details = details;
 	}
 
-	public List<Address> getAllBillingAddress() {
-		return allBillingAddress;
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Address getBillingAddress() {
+		return billingAddress;
 	}
 
-	public void setAllBillingAddress(List<Address> allBillingAddress) {
-		this.allBillingAddress = allBillingAddress;
+	public void setBillingAddress(Address billingAddress) {
+		this.billingAddress = billingAddress;
 	}
 
-	public List<Address> getAllContactAddress() {
-		return allContactAddress;
+	public Address getContactAddress() {
+		return contactAddress;
 	}
 
-	public void setAllContactAddress(List<Address> allContactAddress) {
-		this.allContactAddress = allContactAddress;
+	public void setContactAddress(Address contactAddress) {
+		this.contactAddress = contactAddress;
 	}
 
 	public CompanyContact getCompanyContact() {
@@ -108,7 +109,6 @@ public class CompanyDetails {
 		this.companyContact = companyContact;
 	}
 
-	
 	
 	
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sti.ssm.models.CompanyDetails;
-import com.sti.ssm.pojo.CompanyDetailsPOJO;
+import com.sti.ssm.dto.CompanyDetailsDTO;
 import com.sti.ssm.service.CompanyService;
 
 
@@ -23,7 +23,7 @@ public class CompanyController {
 	CompanyService service;
 	
 	@RequestMapping(method=RequestMethod.POST, value="/company/add")
-	public void addCompany(@RequestBody CompanyDetailsPOJO company) {
+	public void addCompany(@RequestBody CompanyDetailsDTO company) {
 		service.addCompany(company);
 	}
 	

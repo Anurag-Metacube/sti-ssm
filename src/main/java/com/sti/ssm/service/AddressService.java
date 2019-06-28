@@ -14,16 +14,8 @@ public class AddressService {
 	@Autowired
 	AddressDao dao;
 	
-	public void addAddress(Address address) {
-		dao.save(address);
+	public Address addAddress(Address address) {
+		return dao.save(address);
 	}
 	
-	public List<Address> getAddress(String companyName, String type) {
-		return dao.getAddressByCompanyAndType(companyName, type);
-	}
-	
-	public void deleteAllByCompanyName(String companyName) {
-		dao.deleteAllByCompany(companyName);
-	}
-
 }
