@@ -35,7 +35,7 @@ public class CompanyDetails implements Serializable{
 	Address billingAddress;
 	
 	@OneToOne(cascade = {CascadeType.ALL})
-	Address contactAddress;
+	Address contractAddress;
 	
 	@OneToOne(cascade = {CascadeType.ALL})
 	CompanyContact companyContact;
@@ -49,7 +49,7 @@ public class CompanyDetails implements Serializable{
 		this.abbreviation = abbreviation;
 		this.details = details;
 		this.billingAddress = billingAddress;
-		this.contactAddress = contactAddress;
+		this.contractAddress = contactAddress;
 		this.companyContact = companyContact;
 	}
 
@@ -92,12 +92,12 @@ public class CompanyDetails implements Serializable{
 		this.billingAddress = billingAddress;
 	}
 
-	public Address getContactAddress() {
-		return contactAddress;
+	public Address getContractAddress() {
+		return contractAddress;
 	}
 
-	public void setContactAddress(Address contactAddress) {
-		this.contactAddress = contactAddress;
+	public void setContractAddress(Address contactAddress) {
+		this.contractAddress = contactAddress;
 	}
 
 	public CompanyContact getCompanyContact() {
