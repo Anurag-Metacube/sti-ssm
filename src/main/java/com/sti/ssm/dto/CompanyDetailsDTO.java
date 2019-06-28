@@ -30,6 +30,16 @@ public class CompanyDetailsDTO {
 		this.companyContact = companyContact;
 	}
 	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getCompanyName() {
 		return companyName;
 	}

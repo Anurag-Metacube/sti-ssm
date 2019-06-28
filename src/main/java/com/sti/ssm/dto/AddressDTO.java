@@ -2,6 +2,7 @@ package com.sti.ssm.dto;
 
 public class AddressDTO {
 
+	int id;
 	String address1;
 	String address2;
 	String address3;
@@ -23,6 +24,17 @@ public class AddressDTO {
 		this.country = country;
 		this.zip = zip;
 	}
+	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getAddress1() {
 		return address1;
 	}

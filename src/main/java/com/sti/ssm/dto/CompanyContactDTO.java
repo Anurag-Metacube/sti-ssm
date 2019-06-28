@@ -4,6 +4,7 @@ import com.sti.ssm.models.Address;
 
 public class CompanyContactDTO {
 
+	int id;
 	String firstName;
 	String lastName;
 	String emailId;
@@ -19,6 +20,16 @@ public class CompanyContactDTO {
 		this.lastName = lastName;
 		this.emailId = emailId;
 		this.contactAddress = contactAddress;
+	}
+
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
