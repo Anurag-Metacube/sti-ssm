@@ -1,7 +1,5 @@
 package com.sti.ssm.dto;
 
-import com.sti.ssm.models.Address;
-
 public class CompanyContactDTO {
 
 	int id;

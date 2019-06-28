@@ -1,20 +1,15 @@
 package com.sti.ssm.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.sti.ssm.dao.CompanyDao;
 import com.sti.ssm.dto.CompanyDetailsDTO;
-import com.sti.ssm.models.Address;
-import com.sti.ssm.models.CompanyContact;
 import com.sti.ssm.models.CompanyDetails;
-
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.BeanUtils;
 
 
 
@@ -30,6 +25,12 @@ public class CompanyService {
 	@Autowired
 	ContactService contactService;
 	
+	private static final String CACHE_PREFIX = "company_service";
+	
+	public static String getCacheKey(String relevant){
+		return CACHE_PREFIX + relevant;
+	}
+	
 	public void addCompany(CompanyDetailsDTO companyDTO) {
 		/*CompanyDetails company = new CompanyDetails();
 		BeanUtils.copyProperties(companyDTO, company);*/
@@ -40,11 +41,15 @@ public class CompanyService {
 		dao.addCompany(company);
 	}
 	
+	@Cacheable(cacheNames = "company", key = "T(com.sti.ssm.service.CompanyService).getCacheKey(#id)")
 	public CompanyDetails getCompany (int id) {
+		System.out.println("Inside getCompany by Id method()");
 		return dao.getCompany(id);
 	}
 	
+	@Cacheable(cacheNames = "company", key = "T(com.sti.ssm.service.CompanyService).getCacheKey('all')")
 	public List<CompanyDetails> getAllCompanies(){
+		System.out.println("Inside getAllCompanies method()");
 		return dao.getAllCompanies();
 	}
 

@@ -1,12 +1,5 @@
 package com.sti.ssm.dto;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-
-import com.sti.ssm.models.Address;
-
 public class CompanyDetailsDTO {
 
 	int id;
