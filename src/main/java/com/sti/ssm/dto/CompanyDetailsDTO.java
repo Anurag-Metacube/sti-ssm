@@ -14,7 +14,8 @@ public class CompanyDetailsDTO {
 	String abbreviation;
 	AddressDTO details;
 	AddressDTO billingAddress;
-	AddressDTO contactAddress;
+	AddressDTO contractAddress;
+	
 	CompanyContactDTO companyContact;
 	
 	public CompanyDetailsDTO() {}
@@ -26,7 +27,7 @@ public class CompanyDetailsDTO {
 		this.abbreviation = abbreviation;
 		this.details = details;
 		this.billingAddress = billingAddress;
-		this.contactAddress = contactAddress;
+		this.contractAddress = contactAddress;
 		this.companyContact = companyContact;
 	}
 	
@@ -66,11 +67,11 @@ public class CompanyDetailsDTO {
 	public void setBillingAddress(AddressDTO billingAddress) {
 		this.billingAddress = billingAddress;
 	}
-	public AddressDTO getContactAddress() {
-		return contactAddress;
+	public AddressDTO getContractAddress() {
+		return contractAddress;
 	}
-	public void setContactAddress(AddressDTO contactAddress) {
-		this.contactAddress = contactAddress;
+	public void setContractAddress(AddressDTO contractAddress) {
+		this.contractAddress = contractAddress;
 	}
 	public CompanyContactDTO getCompanyContact() {
 		return companyContact;
