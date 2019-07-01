@@ -14,10 +14,13 @@ import com.sti.ssm.models.CompanyDetails;
 import com.sti.ssm.dto.CompanyDetailsDTO;
 import com.sti.ssm.service.CompanyService;
 
+import lombok.extern.slf4j.Slf4j;
+
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-public class CompanyController {
+@Slf4j
+public class CompanyController extends BaseController {
 	
 	@Autowired
 	CompanyService service;
@@ -29,6 +32,7 @@ public class CompanyController {
 	
 	@RequestMapping(method=RequestMethod.GET, value="/company/{id}")
 	public CompanyDetails getCompany(@PathVariable int id) {
+		log.info("Company Fetch Request for id : " + id);
 		return service.getCompany(id);
 	}
 	
