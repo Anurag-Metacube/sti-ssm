@@ -1,0 +1,47 @@
+= IQVIA STI-SSM API Documentation
+:toc: left
+:sectnums:
+:toc-title: STI-SSM
+:page-layout: docs
+
+== Introduction
+This is an example of Spring REST Docs generated documentation.
+
+== Company API
+Collection of CRUD API endpoints used to manipulate companies registered in the application.
+
+=== Get Company By Id
+Obtains a specific company registered in the application by its unique identifier.
+
+===== Sample Request
+include::{snippets}/company/get-by-id/http-request.adoc[]
+
+===== Sample Response
+include::{snippets}/company/get-by-id/http-response.adoc[]
+
+===== CURL example
+include::{snippets}/company/get-by-id/curl-request.adoc[]
+
+=== Get All Companies
+Obtains a specific company registered in the application by its unique identifier.
+
+===== Sample Request
+include::{snippets}/company/get-all-companies/http-request.adoc[]
+
+===== Sample Response
+include::{snippets}/company/get-all-companies/http-response.adoc[]
+
+===== CURL example
+include::{snippets}/company/get-all-companies/curl-request.adoc[]
+
+=== Add Company
+Obtains a specific company registered in the application by its unique identifier.
+
+===== Sample Request
+include::{snippets}/company/add-company/http-request.adoc[]
+
+===== Sample Response
+include::{snippets}/company/add-company/http-response.adoc[]
+
+===== CURL example
+include::{snippets}/company/add-company/curl-request.adoc[]
