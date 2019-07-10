@@ -40,13 +40,13 @@ public class CompanyService {
 		companyDao.addCompany(company);
 	}
 	
-	@Cacheable(cacheNames = "company", key = "T(com.sti.ssm.service.CompanyService).getCacheKey(#id)")
+	//@Cacheable(cacheNames = "company", key = "T(com.sti.ssm.service.CompanyService).getCacheKey(#id)")
 	public CompanyDetails getCompany (int id) {
 		log.debug("Inside getCompany by Id method()");
 		return companyDao.getCompany(id);
 	}
 	
-	@Cacheable(cacheNames = "company", key = "T(com.sti.ssm.service.CompanyService).getCacheKey('all')")
+	//@Cacheable(cacheNames = "company", key = "T(com.sti.ssm.service.CompanyService).getCacheKey('all')")
 	public List<CompanyDetails> getAllCompanies(){
 		log.debug("Inside getAllCompanies method()");
 		return companyDao.getAllCompanies();

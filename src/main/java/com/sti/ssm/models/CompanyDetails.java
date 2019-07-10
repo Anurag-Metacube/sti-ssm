@@ -6,12 +6,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import java.io.Serializable;
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "company_detail")
 public class CompanyDetails implements Serializable{
 
 	/**
