@@ -8,3 +8,4 @@ Install Redis Client and Client Server
 
 #How to setup Quartz Tables in Database
 Run the SQL script present in file "quartz_tables" present at \src\main\resources in your Database.
+- mysql> source <PATH_TO_QUARTZ_TABLES.sql>
