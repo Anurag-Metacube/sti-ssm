@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="xkft9kb-uNSTf2PYAxcG_oWlyJK" cacheDuration="PT1440M" entityID="urn:saml2:anuragkumawatmetacubecom">
+   <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" WantAuthnRequestsSigned="true">
+      <md:KeyDescriptor use="signing">
+         <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:X509Data>
+               <ds:X509Certificate>MIIC6jCCAdKgAwIBAgIGAWutqADtMA0GCSqGSIb3DQEBCwUAMDYxCzAJBgNVBAYTAklOMREwDwYDVQQKEwhNZXRhY3ViZTEUMBIGA1UEAxMLQ2VydGlmaWNhdGUwHhcNMTkwNzAxMTMwOTU2WhcNMjAwNjMwMTMwOTU2WjA2MQswCQYDVQQGEwJJTjERMA8GA1UEChMITWV0YWN1YmUxFDASBgNVBAMTC0NlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt4Pkv/L5uAVeRevaHvLKt5hMLneoNf7uFB+d3nDhDv4UwsTv8lWgdjkjeAaC7fQUszb7iBu5lD5SZUVWwW4hgixfsTCsjoZYfGe+JAHDcY50zNE0meZdLOo+pzlthw9qsAhPvTOq7OM5j3CRsbNmoTUa/V6O2uUHENjQJYCbQ+GcoF+1F3wEvhbfhsWa5ALYOQeVSQttJoAac6RiQI2NAXUcZCFakfnsxltAnpAj5ElIJZONjkuZC2u2c2soB1IfVclpobEnJn1+SSNahsyjbmPUrJaX9CD19yOKk58H+QsKdckuBMb2aM3cFJ5MVvu6dZuP0pobtI/vrpSd2DmGXwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBpTGC7ZNASKNMoEOYQV4n8DCIkdYh+2o4sRBwNCFQ2Aw2hwrvg4bIyHtlm5b1joAO9lJIJai1npgR8rSlLrreYY8mUUDNGVa7qlM8IU1WruBVGpg03PvrXh10I8JsSWVIew5JsKF7yitf5uiCU6w2oUDl16U9bYeS+5fHlBN+sN/W5u6fM7T02Tzj9Wsmi42mYGCLIgoIVolGCKzoVpLnQm2bW96CJbowiMFqkcMzRVkU5m5+Ygi94rNcS0aXrliQVb0FvSWvULqYfiO4fjXuEDpiJkfrBsnzPpjeaCQSnDiQZNgUVykAn5Uf7xTcWIzAOT46TZvwGfSKePWMG26TM</ds:X509Certificate>
+            </ds:X509Data>
+         </ds:KeyInfo>
+      </md:KeyDescriptor>
+      <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+      <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://localhost:9031/idp/SSO.saml2" />
+   </md:IDPSSODescriptor>
+   <md:ContactPerson contactType="administrative" />
+</md:EntityDescriptor>
