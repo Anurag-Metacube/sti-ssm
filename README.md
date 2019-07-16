@@ -9,3 +9,12 @@ Install Redis Client and Client Server
 #How to setup Quartz Tables in Database
 Run the SQL script present in file "quartz_tables" present at \src\main\resources in your Database.
 - mysql> source <PATH_TO_QUARTZ_TABLES.sql>
+
+
+## SSO Routes for authentication
+- http://localhost:8080/
+- http://localhost:8080/saml/login
+
+## Un-Authenticated Routes
+- http://localhost:8080/companys
+- http://localhost:8080/company/1
