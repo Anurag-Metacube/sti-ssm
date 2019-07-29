@@ -18,3 +18,7 @@ Run the SQL script present in file "quartz_tables" present at \src\main\resource
 ## Un-Authenticated Routes
 - http://localhost:8080/companys
 - http://localhost:8080/company/1
+
+
+## RedHat OPENJDK11
+- https://developers.redhat.com/products/openjdk/download?intcmp=7016000000124gfAAA
