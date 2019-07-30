@@ -32,7 +32,9 @@ repositories {
 
 sourceCompatibility = 11
 targetCompatibility = 11
-
+wrapper {
+    gradleVersion = '5.5.1'
+}
 dependencyManagement {
     imports {
         mavenBom "org.keycloak.bom:keycloak-adapter-bom:4.8.3.Final"
