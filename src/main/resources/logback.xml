@@ -3,11 +3,12 @@
   <include resource="org/springframework/boot/logging/logback/base.xml"/>
   <property name="patternString" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n%rEx"  />
   <appender name="LE"
-            class="com.logentries.logback.LogentriesAppender">
+            class="com.rapid7.logback.LogentriesAppender">
     <Debug>False</Debug>
     <Token>${LOG_LOGENTRIES_TOKEN}</Token>
+ <Region>us</Region>
+    <Debug>False</Debug>
     <Ssl>True</Ssl>
-    <facility>USER</facility>
     <layout>
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </layout>

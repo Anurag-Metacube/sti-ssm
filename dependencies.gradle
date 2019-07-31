@@ -32,7 +32,7 @@ dependencies {
     testCompile 'org.mockito:mockito-core:2.28.2'
 	compile 'com.github.debop:hibernate-redis:2.4.0'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
-	compile 'com.logentries:logentries-appender:1.1.38'
+	compile 'com.rapid7:r7insight_java:1.1.39'
 	compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile("junit:junit")
 	
