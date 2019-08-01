@@ -18,3 +18,7 @@ Run the SQL script present in file "quartz_tables" present at \src\main\resource
 ## Un-Authenticated Routes
 - http://localhost:8080/companys
 - http://localhost:8080/company/1
+
+## live reload with gradle
+./gradlew build --continuous along with
+./gradlew bootrun

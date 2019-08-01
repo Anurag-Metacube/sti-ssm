@@ -35,5 +35,6 @@ dependencies {
 	compile 'com.logentries:logentries-appender:1.1.38'
 	compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile("junit:junit")
+    compileOnly("org.springframework.boot:spring-boot-devtools")
 	
 }
