@@ -23,7 +23,9 @@ dependencies {
     compile 'org.springframework.security.extensions:spring-security-saml2-core:1.0.9.RELEASE'
     compile 'org.springframework.security.extensions:spring-security-saml-dsl:1.0.0.M3'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    compile group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '4.8.3.Final'
+    compile 'org.keycloak:keycloak-spring-boot-2-starter:4.0.0.Final'
+    compile group: 'org.keycloak', name: 'keycloak-spring-security-adapter', version: '4.8.3.Final'
+    compile group: 'org.keycloak', name: 'keycloak-authz-client', version: '4.8.3.Final'
 	runtime 'com.h2database:h2:1.4.199'
     runtime 'mysql:mysql-connector-java:8.0.16'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
@@ -33,7 +35,9 @@ dependencies {
 	compile 'com.github.debop:hibernate-redis:2.4.0'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
 	
+	
 	compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile("junit:junit")
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 	
 }
