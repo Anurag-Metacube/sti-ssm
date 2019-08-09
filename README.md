@@ -22,3 +22,10 @@ Run the SQL script present in file "quartz_tables" present at \src\main\resource
 ## live reload with gradle
 ./gradlew build --continuous along with
 ./gradlew bootrun
+
+
+## Create Docker Image
+./gradlew docker
+
+## Run Docker Image
+docker run -it -p 8080:8080 sti-ssm
