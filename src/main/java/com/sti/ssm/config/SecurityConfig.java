@@ -32,7 +32,6 @@ import com.smartsti.auth.jwt.client.rest.AssistKeycloakAuthenticationProcessingF
 import com.smartsti.auth.jwt.client.rest.AssistKeycloakPreAuthActionsFilter;
 import com.smartsti.auth.jwt.client.rest.JwtTokenAuthenticationProvider;
 import com.smartsti.auth.jwt.client.rest.JwtTokenAuthenticationV1Filter;
-import com.smartsti.auth.jwt.client.rest.UnauthorizedUserAuthenticationEntryPoint;
 
 /**
  * Created by brennan.mackay on 2017-04-07.
@@ -44,11 +43,6 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 	@Autowired
 	private JwtTokenAuthenticationProvider authenticationProvider;
 
-	@Autowired
-	private UnauthorizedUserAuthenticationEntryPoint authenticationEntryPoint;
-
-//    @Autowired
-//    private RequestPropertyBasedKeycloakConfigResolver keycloakConfigResolver;
 
 	@Bean
 	public GrantedAuthoritiesMapper grantedAuthoritiesMapper() {
@@ -149,7 +143,7 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
                     new AntPathRequestMatcher("/card/*/enrollment", HttpMethod.POST.name()))
             ))
             .permitAll()
-            .antMatchers( //resources require for documentation pages
+            .antMatchers( //resources require for documentation and home pages
             	"/",
             	"/index",
                 "/v2/api-docs",

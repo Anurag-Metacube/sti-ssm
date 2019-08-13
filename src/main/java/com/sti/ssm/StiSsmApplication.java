@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableCaching
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+//Including only required packages from jwt-auth-java-client
 @ComponentScan(basePackages = {"com.smartsti.auth.jwt.client.rest"})
 @ComponentScan(basePackages = {"com.smartsti.auth.jwt.client.hash"})
 @ComponentScan(basePackages = {"com.smartsti.auth.jwt.client.model"})
